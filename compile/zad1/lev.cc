@@ -9,8 +9,8 @@ using namespace std;
 
 unsigned lev(string a, string b)
 {
-	if(a.size() == 0) return a.size();
-	if(b.size() == 0) return b.size();
+	if(a.size() == 0) return b.size();
+	if(b.size() == 0) return a.size();
 	if(a[0] == b[0]) return lev(tail(a), tail(b));
 	return min({lev(tail(a),b), lev(a,tail(b)), lev(tail(a), tail(b))}) + 1;
 }
